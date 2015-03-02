@@ -11,6 +11,9 @@ using System.Configuration;
 using System.Net.Mail;
 using System.Net;
 using System.Timers;
+using GoIOdotNET;
+using VSTCoreDefsdotNET;
+using System.Threading;
 
 namespace TempMaster
 {
@@ -27,7 +30,9 @@ namespace TempMaster
         System.Windows.Forms.Timer timer2;
         TimeSpan timespan1;
         TimeSpan timespan2;
-
+        BackgroundWorker bw;
+        IntPtr sensorHandle;
+        
         public Form1()
         {
             InitializeComponent();
@@ -39,6 +44,124 @@ namespace TempMaster
             EmailPassword = Properties.Settings.Default["EmailPassword"].ToString();
             PhoneNumber = Properties.Settings.Default["PhoneNumber"].ToString();
             Carrier = Properties.Settings.Default["Carrier"].ToString();
+
+            CreateProbeThread();
+        }
+
+        private void CreateProbeThread()
+        {
+            bw = new BackgroundWorker();
+            bw.WorkerSupportsCancellation = true;
+            bw.WorkerReportsProgress = true;
+            bw.DoWork += new DoWorkEventHandler(bw_DoWork);
+            bw.ProgressChanged += new ProgressChangedEventHandler(bw_ProgressChanged);
+            bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompleted);
+            bw.RunWorkerAsync();
+        }
+
+        private void bw_DoWork(object sender, DoWorkEventArgs e)
+        {
+            double currentTemp = 0;
+            int status = InitializeProbe();
+            while (bw.CancellationPending != true)
+            {
+                currentTemp = ReadProbe();
+                bw.ReportProgress(0, currentTemp.ToString());
+                Application.DoEvents();
+                Thread.Sleep(1000);
+            }
+            e.Cancel = true;
+        }
+
+        private int InitializeProbe()
+        {
+            Console.WriteLine("Initialzing library...");
+            IntPtr initResult = GoIO.Init();
+            if (initResult.ToInt32() != 0)
+            {
+                Console.Write("Unable to initialize library");
+                Console.ReadLine();
+                return -1;
+            }
+
+            Console.WriteLine("Updating list of available Go!Temps");
+            int numGoTempsFound = GoIO.UpdateListOfAvailableDevices(
+                VST_USB_defs.VENDOR_ID, VST_USB_defs.PRODUCT_ID_GO_TEMP);
+
+            StringBuilder deviceName = new StringBuilder(GoIO.MAX_SIZE_SENSOR_NAME);
+
+            Console.WriteLine("Getting first device name");
+            int status = GoIO.GetNthAvailableDeviceName(deviceName, deviceName.Capacity,
+                VST_USB_defs.VENDOR_ID, VST_USB_defs.PRODUCT_ID_GO_TEMP, 0);
+
+            if (status != 0)
+            {
+                Console.WriteLine("Unable to get the first device name");
+                Console.ReadLine();
+                return -1;
+            }
+
+            Console.WriteLine("Opening device");
+            sensorHandle = GoIO.Sensor_Open(deviceName.ToString(), VST_USB_defs.VENDOR_ID,
+                VST_USB_defs.PRODUCT_ID_GO_TEMP, 0);
+            if (sensorHandle == IntPtr.Zero)
+            {
+                Console.WriteLine("Unable to open sensor.");
+                Console.ReadLine();
+                return -1;
+            }
+            Console.WriteLine("Starting measurements");
+            GoIO.Sensor_SendCmdAndGetResponse4(sensorHandle, GoIO_ParmBlk.CMD_ID_START_MEASUREMENTS, GoIO.TIMEOUT_MS_DEFAULT);
+            return 0;
+        }
+
+        private double ReadProbe()
+        { 
+            double volts;
+            double currtemp = 0;
+
+            if (sensorHandle != IntPtr.Zero)
+            {
+                int MAX = 1000;
+                int[] raw = new int[MAX];
+                int numMeasurements = GoIO.Sensor_ReadRawMeasurements(sensorHandle, raw, (uint)raw.Length);
+
+                for (int i = 0; i < numMeasurements; i++)
+                {
+                    volts = GoIO.Sensor_ConvertToVoltage(sensorHandle, raw[i]);
+                    currtemp = GoIO.Sensor_CalibrateData(sensorHandle,volts);
+                }
+            }
+            return Math.Round(currtemp,1);
+        }
+
+        private void bw_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            this.label1.Text = e.UserState as string;
+        }
+
+        private void bw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            //cleanup usb connection!
+            GoIO.Sensor_SendCmdAndGetResponse4(sensorHandle, GoIO_ParmBlk.CMD_ID_STOP_MEASUREMENTS, GoIO.TIMEOUT_MS_DEFAULT);
+            Console.WriteLine("Closing sensor handle");
+            GoIO.Sensor_Close(sensorHandle);
+            sensorHandle = IntPtr.Zero;
+
+            Console.WriteLine("Uninitializing library");
+            //GoIO.Uninit();
+
+            //if ((e.Cancelled == true))
+            //{
+            //}
+
+            //else if (!(e.Error == null))
+            //{
+            //}
+
+            //else
+            //{
+            //}
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -58,6 +181,15 @@ namespace TempMaster
             Properties.Settings.Default["PhoneNumber"] = PhoneNumber;
             Properties.Settings.Default["Carrier"] = Carrier;
             Properties.Settings.Default.Save();
+            
+            //close the thread nicely
+            label1.Visible = false;
+            bw.CancelAsync();
+            while (bw.CancellationPending)
+            {
+                Thread.Sleep(50);
+                Application.DoEvents();
+            }
         }
 
         public static void AddOrUpdateAppSettings(string key, string value)

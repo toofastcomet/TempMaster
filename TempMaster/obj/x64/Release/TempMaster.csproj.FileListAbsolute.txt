@@ -1,0 +1,17 @@
+C:\Users\Home\Documents\GitHub\TempMaster\TempMaster\bin\x64\Release\TempMaster.exe.config
+C:\Users\Home\Documents\GitHub\TempMaster\TempMaster\bin\x64\Release\GoIO_DLL.dll
+C:\Users\Home\Documents\GitHub\TempMaster\TempMaster\bin\x64\Release\TempMaster.exe
+C:\Users\Home\Documents\GitHub\TempMaster\TempMaster\bin\x64\Release\TempMaster.pdb
+C:\Users\Home\Documents\GitHub\TempMaster\TempMaster\bin\x64\Release\GoIOdotNET.dll
+C:\Users\Home\Documents\GitHub\TempMaster\TempMaster\bin\x64\Release\VSTCoreDefsdotNET.dll
+C:\Users\Home\Documents\GitHub\TempMaster\TempMaster\bin\x64\Release\GoIOdotNET.pdb
+C:\Users\Home\Documents\GitHub\TempMaster\TempMaster\bin\x64\Release\GoIOdotNET.xml
+C:\Users\Home\Documents\GitHub\TempMaster\TempMaster\bin\x64\Release\VSTCoreDefsdotNET.pdb
+C:\Users\Home\Documents\GitHub\TempMaster\TempMaster\bin\x64\Release\VSTCoreDefsdotNET.xml
+C:\Users\Home\Documents\GitHub\TempMaster\TempMaster\obj\x64\Release\TempMaster.csprojResolveAssemblyReference.cache
+C:\Users\Home\Documents\GitHub\TempMaster\TempMaster\obj\x64\Release\TempMaster.Form1.resources
+C:\Users\Home\Documents\GitHub\TempMaster\TempMaster\obj\x64\Release\TempMaster.Notification.resources
+C:\Users\Home\Documents\GitHub\TempMaster\TempMaster\obj\x64\Release\TempMaster.Properties.Resources.resources
+C:\Users\Home\Documents\GitHub\TempMaster\TempMaster\obj\x64\Release\TempMaster.csproj.GenerateResource.Cache
+C:\Users\Home\Documents\GitHub\TempMaster\TempMaster\obj\x64\Release\TempMaster.exe
+C:\Users\Home\Documents\GitHub\TempMaster\TempMaster\obj\x64\Release\TempMaster.pdb
