@@ -1,0 +1,10 @@
+H:\UNICOMP\CAUsers\egodsey\TempMaster\TempMaster\bin\Debug\TempMaster.exe
+H:\UNICOMP\CAUsers\egodsey\TempMaster\TempMaster\bin\Debug\TempMaster.pdb
+H:\UNICOMP\CAUsers\egodsey\TempMaster\TempMaster\obj\Debug\TempMaster.csprojResolveAssemblyReference.cache
+H:\UNICOMP\CAUsers\egodsey\TempMaster\TempMaster\obj\Debug\TempMaster.Properties.Resources.resources
+H:\UNICOMP\CAUsers\egodsey\TempMaster\TempMaster\obj\Debug\TempMaster.csproj.GenerateResource.Cache
+H:\UNICOMP\CAUsers\egodsey\TempMaster\TempMaster\obj\Debug\TempMaster.exe
+H:\UNICOMP\CAUsers\egodsey\TempMaster\TempMaster\obj\Debug\TempMaster.pdb
+H:\UNICOMP\CAUsers\egodsey\TempMaster\TempMaster\obj\Debug\TempMaster.Form1.resources
+H:\UNICOMP\CAUsers\egodsey\TempMaster\TempMaster\bin\Debug\TempMaster.exe.config
+H:\UNICOMP\CAUsers\egodsey\TempMaster\TempMaster\obj\Debug\TempMaster.Notification.resources

@@ -1,0 +1,8 @@
+H:\UNICOMP\CAUsers\egodsey\TempMaster\TempMaster\bin\Release\TempMaster.exe.config
+H:\UNICOMP\CAUsers\egodsey\TempMaster\TempMaster\bin\Release\TempMaster.exe
+H:\UNICOMP\CAUsers\egodsey\TempMaster\TempMaster\bin\Release\TempMaster.pdb
+H:\UNICOMP\CAUsers\egodsey\TempMaster\TempMaster\obj\Release\TempMaster.Form1.resources
+H:\UNICOMP\CAUsers\egodsey\TempMaster\TempMaster\obj\Release\TempMaster.Properties.Resources.resources
+H:\UNICOMP\CAUsers\egodsey\TempMaster\TempMaster\obj\Release\TempMaster.csproj.GenerateResource.Cache
+H:\UNICOMP\CAUsers\egodsey\TempMaster\TempMaster\obj\Release\TempMaster.exe
+H:\UNICOMP\CAUsers\egodsey\TempMaster\TempMaster\obj\Release\TempMaster.pdb
