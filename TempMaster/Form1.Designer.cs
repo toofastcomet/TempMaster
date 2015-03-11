@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.setupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stopTimersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.alert1TextBox = new System.Windows.Forms.TextBox();
@@ -40,7 +41,6 @@
             this.timerBackgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.timer1label = new System.Windows.Forms.Label();
             this.timer2label = new System.Windows.Forms.Label();
-            this.stopTimersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,9 +71,16 @@
             // setupToolStripMenuItem
             // 
             this.setupToolStripMenuItem.Name = "setupToolStripMenuItem";
-            this.setupToolStripMenuItem.Size = new System.Drawing.Size(115, 20);
-            this.setupToolStripMenuItem.Text = "Notification Setup";
+            this.setupToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.setupToolStripMenuItem.Text = "Setup";
             this.setupToolStripMenuItem.Click += new System.EventHandler(this.setupToolStripMenuItem_Click);
+            // 
+            // stopTimersToolStripMenuItem
+            // 
+            this.stopTimersToolStripMenuItem.Name = "stopTimersToolStripMenuItem";
+            this.stopTimersToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.stopTimersToolStripMenuItem.Text = "Stop Timers";
+            this.stopTimersToolStripMenuItem.Click += new System.EventHandler(this.stopTimersToolStripMenuItem_Click);
             // 
             // label2
             // 
@@ -156,13 +163,6 @@
             this.timer2label.TabIndex = 9;
             this.timer2label.Text = "00:00:00";
             this.timer2label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // stopTimersToolStripMenuItem
-            // 
-            this.stopTimersToolStripMenuItem.Name = "stopTimersToolStripMenuItem";
-            this.stopTimersToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
-            this.stopTimersToolStripMenuItem.Text = "Stop Timers";
-            this.stopTimersToolStripMenuItem.Click += new System.EventHandler(this.stopTimersToolStripMenuItem_Click);
             // 
             // Form1
             // 

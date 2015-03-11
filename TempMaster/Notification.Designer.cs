@@ -42,6 +42,11 @@
             this.emailSslCheckBox = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.carrierComboBox = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.loggingCheckBox = new System.Windows.Forms.CheckBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.logIntervalTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -106,28 +111,28 @@
             // 
             // emailServerTextBox
             // 
-            this.emailServerTextBox.Location = new System.Drawing.Point(99, 12);
+            this.emailServerTextBox.Location = new System.Drawing.Point(109, 12);
             this.emailServerTextBox.Name = "emailServerTextBox";
             this.emailServerTextBox.Size = new System.Drawing.Size(148, 20);
             this.emailServerTextBox.TabIndex = 1;
             // 
             // emailPortTextBox
             // 
-            this.emailPortTextBox.Location = new System.Drawing.Point(99, 38);
+            this.emailPortTextBox.Location = new System.Drawing.Point(109, 38);
             this.emailPortTextBox.Name = "emailPortTextBox";
             this.emailPortTextBox.Size = new System.Drawing.Size(148, 20);
             this.emailPortTextBox.TabIndex = 2;
             // 
             // emailAddrTextBox
             // 
-            this.emailAddrTextBox.Location = new System.Drawing.Point(99, 90);
+            this.emailAddrTextBox.Location = new System.Drawing.Point(109, 90);
             this.emailAddrTextBox.Name = "emailAddrTextBox";
             this.emailAddrTextBox.Size = new System.Drawing.Size(148, 20);
             this.emailAddrTextBox.TabIndex = 4;
             // 
             // emailPasswordTextBox
             // 
-            this.emailPasswordTextBox.Location = new System.Drawing.Point(99, 116);
+            this.emailPasswordTextBox.Location = new System.Drawing.Point(109, 116);
             this.emailPasswordTextBox.Name = "emailPasswordTextBox";
             this.emailPasswordTextBox.PasswordChar = '*';
             this.emailPasswordTextBox.Size = new System.Drawing.Size(148, 20);
@@ -135,7 +140,7 @@
             // 
             // phoneTextBox
             // 
-            this.phoneTextBox.Location = new System.Drawing.Point(99, 142);
+            this.phoneTextBox.Location = new System.Drawing.Point(109, 142);
             this.phoneTextBox.Name = "phoneTextBox";
             this.phoneTextBox.Size = new System.Drawing.Size(148, 20);
             this.phoneTextBox.TabIndex = 6;
@@ -143,7 +148,7 @@
             // emailSslCheckBox
             // 
             this.emailSslCheckBox.AutoSize = true;
-            this.emailSslCheckBox.Location = new System.Drawing.Point(99, 66);
+            this.emailSslCheckBox.Location = new System.Drawing.Point(109, 66);
             this.emailSslCheckBox.Name = "emailSslCheckBox";
             this.emailSslCheckBox.Size = new System.Drawing.Size(80, 17);
             this.emailSslCheckBox.TabIndex = 3;
@@ -163,17 +168,70 @@
             // carrierComboBox
             // 
             this.carrierComboBox.FormattingEnabled = true;
-            this.carrierComboBox.Location = new System.Drawing.Point(99, 168);
+            this.carrierComboBox.Location = new System.Drawing.Point(109, 168);
             this.carrierComboBox.Name = "carrierComboBox";
             this.carrierComboBox.Size = new System.Drawing.Size(148, 21);
             this.carrierComboBox.TabIndex = 7;
+            // 
+            // label8
+            // 
+            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label8.Location = new System.Drawing.Point(2, 202);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(304, 2);
+            this.label8.TabIndex = 8;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(12, 219);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(45, 13);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "Logging";
+            // 
+            // loggingCheckBox
+            // 
+            this.loggingCheckBox.AutoSize = true;
+            this.loggingCheckBox.Location = new System.Drawing.Point(109, 219);
+            this.loggingCheckBox.Name = "loggingCheckBox";
+            this.loggingCheckBox.Size = new System.Drawing.Size(80, 17);
+            this.loggingCheckBox.TabIndex = 10;
+            this.loggingCheckBox.Text = "checkBox1";
+            this.loggingCheckBox.UseVisualStyleBackColor = true;
+            this.loggingCheckBox.CheckedChanged += new System.EventHandler(this.loggingCheckBox_CheckedChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(12, 244);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(91, 13);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Interval (seconds)";
+            this.label10.Visible = false;
+            // 
+            // logIntervalTextBox
+            // 
+            this.logIntervalTextBox.Location = new System.Drawing.Point(109, 241);
+            this.logIntervalTextBox.Name = "logIntervalTextBox";
+            this.logIntervalTextBox.Size = new System.Drawing.Size(57, 20);
+            this.logIntervalTextBox.TabIndex = 12;
+            this.logIntervalTextBox.Visible = false;
             // 
             // Notification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(306, 207);
+            this.ClientSize = new System.Drawing.Size(306, 286);
+            this.Controls.Add(this.logIntervalTextBox);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.loggingCheckBox);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.carrierComboBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.emailSslCheckBox);
@@ -189,7 +247,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Notification";
-            this.Text = "Notification";
+            this.Text = "Setup";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Notification_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -212,5 +270,10 @@
         private System.Windows.Forms.CheckBox emailSslCheckBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox carrierComboBox;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.CheckBox loggingCheckBox;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox logIntervalTextBox;
     }
 }

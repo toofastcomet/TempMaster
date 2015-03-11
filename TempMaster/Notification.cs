@@ -19,13 +19,14 @@ namespace TempMaster
         public string EmailPassword {get;set;}
         public string PhoneNumber {get;set;}
         public string Carrier { get; set; }
+        public string LogInterval { get; set; }
 
         public Notification()
         {
             InitializeComponent();
         }
 
-        public Notification(string emailserver, string emailport, Boolean emailssl, string emailaddr, string emailpass, string phonenum, string carrier)
+        public Notification(string emailserver, string emailport, Boolean emailssl, string emailaddr, string emailpass, string phonenum, string carrier, string loginterval)
         {
             InitializeComponent();
             emailServerTextBox.Text = emailserver;
@@ -34,6 +35,11 @@ namespace TempMaster
             emailAddrTextBox.Text = emailaddr;
             emailPasswordTextBox.Text = emailpass;
             phoneTextBox.Text = phonenum;
+            logIntervalTextBox.Text = loginterval;
+            if (!string.IsNullOrEmpty(logIntervalTextBox.Text))
+            {
+                loggingCheckBox.Checked = true;
+            }
             
             var carriers = new Dictionary<string, string>();
             carriers["3 River Wireless"] = "@sms.3rivers.net";
@@ -209,6 +215,22 @@ namespace TempMaster
             if (carrierComboBox.SelectedValue != null)
             {
                 Carrier = carrierComboBox.SelectedValue.ToString();
+            }
+            LogInterval = logIntervalTextBox.Text;
+        }
+
+        private void loggingCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (loggingCheckBox.Checked)
+            {
+                logIntervalTextBox.Visible = true;
+                label10.Visible = true;
+            }
+            else
+            {
+                logIntervalTextBox.Text = null;
+                logIntervalTextBox.Visible = false;
+                label10.Visible = false;
             }
         }
     }

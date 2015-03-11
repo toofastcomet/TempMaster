@@ -106,5 +106,17 @@ namespace TempMaster.Properties {
                 this["Carrier"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LogInterval {
+            get {
+                return ((string)(this["LogInterval"]));
+            }
+            set {
+                this["LogInterval"] = value;
+            }
+        }
     }
 }

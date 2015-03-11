@@ -26,12 +26,14 @@ namespace TempMaster
         string EmailPassword;
         string PhoneNumber;
         string Carrier;
+        string LogInterval;
         System.Windows.Forms.Timer timer1;
         System.Windows.Forms.Timer timer2;
         TimeSpan timespan1;
         TimeSpan timespan2;
         BackgroundWorker bw;
         IntPtr sensorHandle;
+        Log LogInstance;
         
         public Form1()
         {
@@ -44,6 +46,11 @@ namespace TempMaster
             EmailPassword = Properties.Settings.Default["EmailPassword"].ToString();
             PhoneNumber = Properties.Settings.Default["PhoneNumber"].ToString();
             Carrier = Properties.Settings.Default["Carrier"].ToString();
+            LogInterval = Properties.Settings.Default["LogInterval"].ToString();
+            if (!string.IsNullOrEmpty(LogInterval))
+            {
+                LogInstance = new Log(LogInterval);
+            }
 
             CreateProbeThread();
         }
@@ -68,6 +75,10 @@ namespace TempMaster
                 currentTemp = ReadProbe();
                 bw.ReportProgress(0, currentTemp.ToString());
                 Application.DoEvents();
+                if (LogInstance != null)
+                {
+                    LogInstance.LogFile(currentTemp.ToString());
+                }
                 Thread.Sleep(1000);
             }
             e.Cancel = true;
@@ -162,6 +173,9 @@ namespace TempMaster
             //else
             //{
             //}
+
+            //close logging file
+
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -180,6 +194,7 @@ namespace TempMaster
             Properties.Settings.Default["EmailPassword"] = EmailPassword;
             Properties.Settings.Default["PhoneNumber"] = PhoneNumber;
             Properties.Settings.Default["Carrier"] = Carrier;
+            Properties.Settings.Default["LogInterval"] = LogInterval;
             Properties.Settings.Default.Save();
             
             //close the thread nicely
@@ -189,6 +204,11 @@ namespace TempMaster
             {
                 Thread.Sleep(50);
                 Application.DoEvents();
+            }
+
+            if (LogInstance != null)
+            {
+                LogInstance.CloseLog();
             }
         }
 
@@ -217,7 +237,7 @@ namespace TempMaster
 
         private void setupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Notification noti = new Notification(EmailServer, EmailPort, EmailSSL, EmailAddress, EmailPassword, PhoneNumber, Carrier);
+            Notification noti = new Notification(EmailServer, EmailPort, EmailSSL, EmailAddress, EmailPassword, PhoneNumber, Carrier, LogInterval);
             noti.ShowDialog();
             EmailServer = noti.EmailServer;
             EmailPort = noti.EmailPort;
@@ -226,6 +246,14 @@ namespace TempMaster
             EmailPassword = noti.EmailPassword;
             PhoneNumber = noti.PhoneNumber;
             Carrier = noti.Carrier;
+            LogInterval = noti.LogInterval;
+            if (!string.IsNullOrEmpty(LogInterval))
+            {
+                if (LogInstance == null)
+                {
+                    LogInstance = new Log(LogInterval);
+                }
+            }
         }
 
         private void label1_TextChanged(object sender, EventArgs e)
