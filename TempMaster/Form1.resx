@@ -123,4 +123,37 @@
   <metadata name="timerBackgroundWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>132, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEALy8QAAEABABIBgAAFgAAACgAAAAvAAAAXgAAAAEABAAAAAAAaAQAAAAAAAAAAAAAEAAAABAA
+        AABra24AiYmNAJeW5ADMzM0Arq6vAFBPpwDPzvIAWVbWAPHx8gAvLnMA5OTnADIvswA0Mc0A////AP//
+        /wAAAAAA7u7u7u7u7u7u7u7u7u7qQRERPu7u7u7g7u7u7u7u7u7u7u7u7uoErd3YQD7u7u7g7u7u7u7u
+        7u7u7u7u7kGNoiIm3RHu7u7g7u7u7u7u7u7u7u7u5A1nzMzMdtMe7u7g7u7u7u7u7u7u7u7uoNbMzMzM
+        zC1E7u7g7u7u7u7u7u7u7u7uGGzMzMzMzMLRru7g7u7u7u7u7u7u7u7qHXzMzMzMzMyoDu7g7u7u7u7u
+        7u7u7u7hpszMzMzMzMwtHu7g7u7u7u7u7u7u7u7h0szMzMzMzMzNQ+7g7u7u7u7u7u7u7u7h0szMzMzM
+        zMzNM+7g7u7u7u7u7u7u7u7h0szMzMzMzMzNM+7g7u7u7u7u7u7u7u7h0szMzMzMzMzNQ+7g7u7u7u7u
+        7u7u7u7h1szMzMzMzMx9GO7g7u7u7u7u7u7u7u7h3XzMzMzMzMwtHu7g7u7u7u7u7u7u7u7kPWzMzMzM
+        zMfUTu7g7u7u7u7u7u7u7u7uCNLMzMzMzMqA7u7g7u7u7u7u7u7u7u7uoNrMzMzMx20D7u7g7u7u7u7u
+        7u7u7u7uMdLMzMzHbdRO7u7g7u7u7u7u7u7u7u7uAazMxt3d2BTu7u7g7u7u7u7u7u7u7u7jCpnMLd3a
+        QD7u7u7g7u7u7u7u7u7u7u7gMMu8owEUru7u7u7g7u7u7u7u7u7u7u5ABczC0O7u7u7u7u7g7u7u7u7u
+        7u7u7u4AKZvKNO7u7u7u7u7g7u7u7u7u7u7u7uQDXMwtDu7u7u7u7u7g7u7u7u7u7u7u7uCgnMyETu7u
+        7u7u7u7g7u7u7u7u7u7u7kQFucLQ7u7u7u7u7u7g7u7u7u7u7u7u6AAczMhD7u7u7u7u7u7g7u7u7u7u
+        7u7u4QNZvC0O7u7u7u7u7u7g7u7u7u7u7u7ugDHMt9Q+7u7u7u7u7u7g7u7u7u7u7u7uFBm8woDu7u7u
+        7u7u7u7g7u7u7u7u7u7oAQycfRPu7u7u7u7u7u7g7u7u7u7u7u7gEczMKB7u7u7u7u7u7u7g7u7u7u7u
+        7u6gQZvH0a7u7u7u7u7u7u7g7u7u7u7u7u4ES8vGge7u7u7u7u7u7u7g7u7u7u7u7uMUC8x9Cu7u7u7u
+        7u7u7u7g7u7u7u7u7uERYLxqHu7u7u7u7u7u7u7g7u7u7u7u7jAY3WLRju7u7u7u7u7u7u7g7u7u7u7u
+        7gGhGN2h7u7u7u7u7u7u7u7g7u7u7u7u4wNNqN0Y7u7u7u7u7u7u7u7g7u7u7u7u4DA93dMe7u7u7u7u
+        7u7u7u7g7u7u7u7uMApE3dCO7u7u7u7u7u7u7u7g7u7u7u7ukTjd3TTu7u7u7u7u7u7u7u7g7u7u7u7j
+        AxCt3Q7u7u7u7u7u7u7u7u7g7u7u7u7ugRM9007u7u7u7u7u7u7u7u7g7u7u7u7u7oEa0O7u7u7u7u7u
+        7u7u7u7g7u7u7u7u7u6gBO7u7u7u7u7u7u7u7u7g7u7u7u7u7u7uru7u7u7u7u7u7u7u7u7g////+Af+
+        AAD////gAf4AAP///8AA/gAA////gAB+AAD///8AAD4AAP///wAAHgAA///+AAAeAAD///4AAB4AAP//
+        /gAADgAA///+AAAOAAD///4AAA4AAP///gAADgAA///+AAAOAAD///4AAB4AAP///gAAHgAA////AAA+
+        AAD///8AAD4AAP///wAAfgAA////AAD+AAD///4AAf4AAP///gAH/gAA///8AP/+AAD///wA//4AAP//
+        +AH//gAA///4Af/+AAD///AD//4AAP//4AP//gAA///gB//+AAD//8AH//4AAP//wA///gAA//+AD//+
+        AAD//4Af//4AAP//AB///gAA//8AP//+AAD//gA///4AAP/+AH///gAA//wAf//+AAD//AD///4AAP/4
+        AP///gAA//gB///+AAD/8AH///4AAP/wA////gAA/+AH///+AAD/8Af///4AAP/8D////gAA//8P///+
+        AAD//9////4AAA==
+</value>
+  </data>
 </root>

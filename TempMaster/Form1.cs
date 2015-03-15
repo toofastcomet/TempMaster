@@ -73,6 +73,11 @@ namespace TempMaster
             while (bw.CancellationPending != true)
             {
                 currentTemp = ReadProbe();
+                //debugging purposes w/o probe to simulate going past alert value
+                //if (currentTemp == 0)
+                //{
+                //    currentTemp = DateTime.Now.Second;
+                //}
                 bw.ReportProgress(0, currentTemp.ToString());
                 Application.DoEvents();
                 if (LogInstance != null)

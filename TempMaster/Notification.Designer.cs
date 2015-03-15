@@ -167,6 +167,7 @@
             // 
             // carrierComboBox
             // 
+            this.carrierComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.carrierComboBox.FormattingEnabled = true;
             this.carrierComboBox.Location = new System.Drawing.Point(109, 168);
             this.carrierComboBox.Name = "carrierComboBox";

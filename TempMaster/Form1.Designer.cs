@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.setupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -96,7 +97,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(12, 79);
+            this.label3.Location = new System.Drawing.Point(12, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 13);
             this.label3.TabIndex = 3;
@@ -112,7 +113,7 @@
             // 
             // alert2TextBox
             // 
-            this.alert2TextBox.Location = new System.Drawing.Point(85, 72);
+            this.alert2TextBox.Location = new System.Drawing.Point(85, 75);
             this.alert2TextBox.Name = "alert2TextBox";
             this.alert2TextBox.Size = new System.Drawing.Size(77, 20);
             this.alert2TextBox.TabIndex = 5;
@@ -124,28 +125,27 @@
             this.alert1TimerCheckBox.ForeColor = System.Drawing.Color.White;
             this.alert1TimerCheckBox.Location = new System.Drawing.Point(168, 42);
             this.alert1TimerCheckBox.Name = "alert1TimerCheckBox";
-            this.alert1TimerCheckBox.Size = new System.Drawing.Size(77, 17);
+            this.alert1TimerCheckBox.Size = new System.Drawing.Size(74, 17);
             this.alert1TimerCheckBox.TabIndex = 6;
-            this.alert1TimerCheckBox.Text = "Start Timer";
+            this.alert1TimerCheckBox.Text = "Use Timer";
             this.alert1TimerCheckBox.UseVisualStyleBackColor = true;
             // 
             // alert2TimerCheckBox
             // 
             this.alert2TimerCheckBox.AutoSize = true;
             this.alert2TimerCheckBox.ForeColor = System.Drawing.Color.White;
-            this.alert2TimerCheckBox.Location = new System.Drawing.Point(168, 74);
+            this.alert2TimerCheckBox.Location = new System.Drawing.Point(168, 77);
             this.alert2TimerCheckBox.Name = "alert2TimerCheckBox";
-            this.alert2TimerCheckBox.Size = new System.Drawing.Size(77, 17);
+            this.alert2TimerCheckBox.Size = new System.Drawing.Size(74, 17);
             this.alert2TimerCheckBox.TabIndex = 7;
-            this.alert2TimerCheckBox.Text = "Start Timer";
+            this.alert2TimerCheckBox.Text = "Use Timer";
             this.alert2TimerCheckBox.UseVisualStyleBackColor = true;
             // 
             // timer1label
             // 
-            this.timer1label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.timer1label.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timer1label.ForeColor = System.Drawing.Color.White;
-            this.timer1label.Location = new System.Drawing.Point(12, 533);
+            this.timer1label.Location = new System.Drawing.Point(248, 24);
             this.timer1label.Name = "timer1label";
             this.timer1label.Size = new System.Drawing.Size(151, 39);
             this.timer1label.TabIndex = 8;
@@ -154,10 +154,9 @@
             // 
             // timer2label
             // 
-            this.timer2label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.timer2label.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timer2label.ForeColor = System.Drawing.Color.White;
-            this.timer2label.Location = new System.Drawing.Point(768, 528);
+            this.timer2label.Location = new System.Drawing.Point(248, 63);
             this.timer2label.Name = "timer2label";
             this.timer2label.Size = new System.Drawing.Size(151, 44);
             this.timer2label.TabIndex = 9;
@@ -180,6 +179,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "TempMaster";
